@@ -28,7 +28,7 @@
         <flowId>caf3f116-ef6e-4563-9109-167e997b185d</flowId>
         <flowName>Flow1</flowName>
         <flowDescription>this is a new test</flowDescription>
-        <version>1</version>
+        <version>2</version>
       </versionControlInformation>
       <processor>
         <id>a8734622-0167-1000-61a2-53f939812cbd</id>
@@ -55,6 +55,7 @@
         <runDurationNanos>0</runDurationNanos>
         <property>
           <name>Input Directory</name>
+          <value>${nifi.custom.variable.InputDirectory}</value>
         </property>
         <property>
           <name>File Filter</name>
