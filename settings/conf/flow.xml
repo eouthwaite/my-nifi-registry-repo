@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flowController encoding-version="1.3">
+  <maxTimerDrivenThreadCount>10</maxTimerDrivenThreadCount>
+  <maxEventDrivenThreadCount>5</maxEventDrivenThreadCount>
+  <registries>
+    <flowRegistry>
+      <id>a871ecbc-0167-1000-d231-703c0345f7e9</id>
+      <name>Test</name>
+      <url>http://localhost:18080/</url>
+      <description>This is a test</description>
+    </flowRegistry>
+  </registries>
+  <rootGroup>
+    <id>a836042d-0167-1000-001a-35ebb19e466e</id>
+    <name>NiFi Flow</name>
+    <position x="0.0" y="0.0"/>
+    <comment/>
+    <processGroup>
+      <id>a8758f3a-0167-1000-6e01-0d1652627156</id>
+      <versionedComponentId>06615cf6-a42d-35da-81b6-38d7e394cd74</versionedComponentId>
+      <name>Group1</name>
+      <position x="463.0" y="168.0"/>
+      <comment/>
+      <versionControlInformation>
+        <registryId>a871ecbc-0167-1000-d231-703c0345f7e9</registryId>
+        <bucketId>be0d5adf-7345-445d-945e-d12bb015e16a</bucketId>
+        <bucketName>Test</bucketName>
+        <flowId>caf3f116-ef6e-4563-9109-167e997b185d</flowId>
+        <flowName>Flow1</flowName>
+        <flowDescription>this is a new test</flowDescription>
+        <version>1</version>
+      </versionControlInformation>
+      <processor>
+        <id>a8734622-0167-1000-61a2-53f939812cbd</id>
+        <versionedComponentId>b6b9064f-2af5-371d-8176-8f501d49f7e9</versionedComponentId>
+        <name>GetFile</name>
+        <position x="856.0" y="241.0"/>
+        <styles/>
+        <comment/>
+        <class>org.apache.nifi.processors.standard.GetFile</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-standard-nar</artifact>
+          <version>1.6.0</version>
+        </bundle>
+        <maxConcurrentTasks>1</maxConcurrentTasks>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <penalizationPeriod>30 sec</penalizationPeriod>
+        <yieldPeriod>1 sec</yieldPeriod>
+        <bulletinLevel>WARN</bulletinLevel>
+        <lossTolerant>false</lossTolerant>
+        <scheduledState>STOPPED</scheduledState>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <executionNode>ALL</executionNode>
+        <runDurationNanos>0</runDurationNanos>
+        <property>
+          <name>Input Directory</name>
+        </property>
+        <property>
+          <name>File Filter</name>
+          <value>[^\.].*</value>
+        </property>
+        <property>
+          <name>Path Filter</name>
+        </property>
+        <property>
+          <name>Batch Size</name>
+          <value>10</value>
+        </property>
+        <property>
+          <name>Keep Source File</name>
+          <value>false</value>
+        </property>
+        <property>
+          <name>Recurse Subdirectories</name>
+          <value>true</value>
+        </property>
+        <property>
+          <name>Polling Interval</name>
+          <value>0 sec</value>
+        </property>
+        <property>
+          <name>Ignore Hidden Files</name>
+          <value>true</value>
+        </property>
+        <property>
+          <name>Minimum File Age</name>
+          <value>0 sec</value>
+        </property>
+        <property>
+          <name>Maximum File Age</name>
+        </property>
+        <property>
+          <name>Minimum File Size</name>
+          <value>0 B</value>
+        </property>
+        <property>
+          <name>Maximum File Size</name>
+        </property>
+      </processor>
+    </processGroup>
+  </rootGroup>
+  <controllerServices/>
+  <reportingTasks/>
+</flowController>
