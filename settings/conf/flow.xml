@@ -6,7 +6,7 @@
     <flowRegistry>
       <id>a871ecbc-0167-1000-d231-703c0345f7e9</id>
       <name>Test</name>
-      <url>http://localhost:18080/</url>
+      <url>http://localhost:18080</url>
       <description>This is a test</description>
     </flowRegistry>
   </registries>
@@ -28,20 +28,20 @@
         <flowId>caf3f116-ef6e-4563-9109-167e997b185d</flowId>
         <flowName>Flow1</flowName>
         <flowDescription>this is a new test</flowDescription>
-        <version>2</version>
+        <version>3</version>
       </versionControlInformation>
       <processor>
-        <id>a8734622-0167-1000-61a2-53f939812cbd</id>
-        <versionedComponentId>b6b9064f-2af5-371d-8176-8f501d49f7e9</versionedComponentId>
-        <name>GetFile</name>
-        <position x="856.0" y="241.0"/>
+        <id>acb9b69d-0167-1000-cdf2-aa65c8c2c37b</id>
+        <versionedComponentId>d656c0f9-0925-3afd-b7e1-92c98a760df2</versionedComponentId>
+        <name>LoopOnFail</name>
+        <position x="1524.5" y="438.0"/>
         <styles/>
         <comment/>
-        <class>org.apache.nifi.processors.standard.GetFile</class>
+        <class>org.apache.nifi.processors.attributes.UpdateAttribute</class>
         <bundle>
           <group>org.apache.nifi</group>
-          <artifact>nifi-standard-nar</artifact>
-          <version>1.6.0</version>
+          <artifact>nifi-update-attribute-nar</artifact>
+          <version>1.8.0</version>
         </bundle>
         <maxConcurrentTasks>1</maxConcurrentTasks>
         <schedulingPeriod>0 sec</schedulingPeriod>
@@ -49,7 +49,114 @@
         <yieldPeriod>1 sec</yieldPeriod>
         <bulletinLevel>WARN</bulletinLevel>
         <lossTolerant>false</lossTolerant>
-        <scheduledState>STOPPED</scheduledState>
+        <scheduledState>DISABLED</scheduledState>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <executionNode>ALL</executionNode>
+        <runDurationNanos>0</runDurationNanos>
+        <property>
+          <name>Delete Attributes Expression</name>
+        </property>
+        <property>
+          <name>Store State</name>
+          <value>Do not store state</value>
+        </property>
+        <property>
+          <name>Stateful Variables Initial Value</name>
+        </property>
+      </processor>
+      <processor>
+        <id>acb82366-0167-1000-8d25-49c4c7dda3a4</id>
+        <versionedComponentId>3e251950-630e-3d6a-a0ae-18f2a180d093</versionedComponentId>
+        <name>PutMarkLogic</name>
+        <position x="885.75" y="438.0"/>
+        <styles/>
+        <comment/>
+        <class>org.apache.nifi.marklogic.processor.PutMarkLogic</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-marklogic-nar</artifact>
+          <version>1.8.0.2</version>
+        </bundle>
+        <maxConcurrentTasks>1</maxConcurrentTasks>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <penalizationPeriod>30 sec</penalizationPeriod>
+        <yieldPeriod>1 sec</yieldPeriod>
+        <bulletinLevel>WARN</bulletinLevel>
+        <lossTolerant>false</lossTolerant>
+        <scheduledState>RUNNING</scheduledState>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <executionNode>ALL</executionNode>
+        <runDurationNanos>0</runDurationNanos>
+        <property>
+          <name>DatabaseClient Service</name>
+          <value>acbd7659-0167-1000-a0ea-395ce5f9c5f0</value>
+        </property>
+        <property>
+          <name>Batch Size</name>
+          <value>100</value>
+        </property>
+        <property>
+          <name>Thread Count</name>
+          <value>3</value>
+        </property>
+        <property>
+          <name>Collections</name>
+        </property>
+        <property>
+          <name>Format</name>
+        </property>
+        <property>
+          <name>Job ID</name>
+        </property>
+        <property>
+          <name>Job Name</name>
+        </property>
+        <property>
+          <name>MIME type</name>
+        </property>
+        <property>
+          <name>Permissions</name>
+          <value>rest-reader,read,rest-writer,update</value>
+        </property>
+        <property>
+          <name>Server Transform</name>
+        </property>
+        <property>
+          <name>Temporal Collection</name>
+        </property>
+        <property>
+          <name>URI Attribute Name</name>
+          <value>uuid</value>
+        </property>
+        <property>
+          <name>URI Prefix</name>
+          <value>/test/</value>
+        </property>
+        <property>
+          <name>URI Suffix</name>
+        </property>
+        <autoTerminatedRelationship>batch_success</autoTerminatedRelationship>
+      </processor>
+      <processor>
+        <id>a8734622-0167-1000-61a2-53f939812cbd</id>
+        <versionedComponentId>b6b9064f-2af5-371d-8176-8f501d49f7e9</versionedComponentId>
+        <name>GetFile</name>
+        <position x="885.75" y="241.0"/>
+        <styles/>
+        <comment/>
+        <class>org.apache.nifi.processors.standard.GetFile</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-standard-nar</artifact>
+          <version>1.8.0</version>
+        </bundle>
+        <maxConcurrentTasks>1</maxConcurrentTasks>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <penalizationPeriod>30 sec</penalizationPeriod>
+        <yieldPeriod>1 sec</yieldPeriod>
+        <bulletinLevel>WARN</bulletinLevel>
+        <lossTolerant>false</lossTolerant>
+        <scheduledState>RUNNING</scheduledState>
         <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
         <executionNode>ALL</executionNode>
         <runDurationNanos>0</runDurationNanos>
@@ -99,6 +206,195 @@
           <name>Maximum File Size</name>
         </property>
       </processor>
+      <processor>
+        <id>acba7164-0167-1000-4b4b-da1cc0ed24cb</id>
+        <versionedComponentId>a7fd21a7-d85e-354d-9090-1eb30a0dd87a</versionedComponentId>
+        <name>LogAttribute</name>
+        <position x="885.75" y="636.5"/>
+        <styles/>
+        <comment/>
+        <class>org.apache.nifi.processors.standard.LogAttribute</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-standard-nar</artifact>
+          <version>1.8.0</version>
+        </bundle>
+        <maxConcurrentTasks>1</maxConcurrentTasks>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <penalizationPeriod>30 sec</penalizationPeriod>
+        <yieldPeriod>1 sec</yieldPeriod>
+        <bulletinLevel>WARN</bulletinLevel>
+        <lossTolerant>false</lossTolerant>
+        <scheduledState>RUNNING</scheduledState>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <executionNode>ALL</executionNode>
+        <runDurationNanos>0</runDurationNanos>
+        <property>
+          <name>Log Level</name>
+          <value>info</value>
+        </property>
+        <property>
+          <name>Log Payload</name>
+          <value>false</value>
+        </property>
+        <property>
+          <name>Attributes to Log</name>
+        </property>
+        <property>
+          <name>attributes-to-log-regex</name>
+          <value>.*</value>
+        </property>
+        <property>
+          <name>Attributes to Ignore</name>
+        </property>
+        <property>
+          <name>attributes-to-ignore-regex</name>
+        </property>
+        <property>
+          <name>Log prefix</name>
+        </property>
+        <property>
+          <name>character-set</name>
+          <value>UTF-8</value>
+        </property>
+        <autoTerminatedRelationship>success</autoTerminatedRelationship>
+      </processor>
+      <connection>
+        <id>acba8530-0167-1000-d79e-0f3c26578d95</id>
+        <versionedComponentId>0c3cd4ba-86c6-31ec-a593-a6a9c180c70d</versionedComponentId>
+        <name/>
+        <bendPoints/>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>acb82366-0167-1000-8d25-49c4c7dda3a4</sourceId>
+        <sourceGroupId>a8758f3a-0167-1000-6e01-0d1652627156</sourceGroupId>
+        <sourceType>PROCESSOR</sourceType>
+        <destinationId>acba7164-0167-1000-4b4b-da1cc0ed24cb</destinationId>
+        <destinationGroupId>a8758f3a-0167-1000-6e01-0d1652627156</destinationGroupId>
+        <destinationType>PROCESSOR</destinationType>
+        <relationship>success</relationship>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <connection>
+        <id>acba9319-0167-1000-2a38-76fbd414516b</id>
+        <versionedComponentId>7c1e3970-afd0-3f11-8727-5a0f07be574c</versionedComponentId>
+        <name/>
+        <bendPoints/>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>acb9b69d-0167-1000-cdf2-aa65c8c2c37b</sourceId>
+        <sourceGroupId>a8758f3a-0167-1000-6e01-0d1652627156</sourceGroupId>
+        <sourceType>PROCESSOR</sourceType>
+        <destinationId>acb82366-0167-1000-8d25-49c4c7dda3a4</destinationId>
+        <destinationGroupId>a8758f3a-0167-1000-6e01-0d1652627156</destinationGroupId>
+        <destinationType>PROCESSOR</destinationType>
+        <relationship>success</relationship>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <connection>
+        <id>acb8714c-0167-1000-d090-5dbfb2f795e8</id>
+        <versionedComponentId>44395381-eea0-3151-ba5e-7e26aaecc53f</versionedComponentId>
+        <name/>
+        <bendPoints/>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>a8734622-0167-1000-61a2-53f939812cbd</sourceId>
+        <sourceGroupId>a8758f3a-0167-1000-6e01-0d1652627156</sourceGroupId>
+        <sourceType>PROCESSOR</sourceType>
+        <destinationId>acb82366-0167-1000-8d25-49c4c7dda3a4</destinationId>
+        <destinationGroupId>a8758f3a-0167-1000-6e01-0d1652627156</destinationGroupId>
+        <destinationType>PROCESSOR</destinationType>
+        <relationship>success</relationship>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <connection>
+        <id>acbc61de-0167-1000-f4ad-f168f040f011</id>
+        <versionedComponentId>05c1e82e-58db-3ca4-b814-eed6d0cdf13c</versionedComponentId>
+        <name/>
+        <bendPoints>
+          <bendPoint x="1380.125" y="428.0"/>
+        </bendPoints>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>acb82366-0167-1000-8d25-49c4c7dda3a4</sourceId>
+        <sourceGroupId>a8758f3a-0167-1000-6e01-0d1652627156</sourceGroupId>
+        <sourceType>PROCESSOR</sourceType>
+        <destinationId>acb9b69d-0167-1000-cdf2-aa65c8c2c37b</destinationId>
+        <destinationGroupId>a8758f3a-0167-1000-6e01-0d1652627156</destinationGroupId>
+        <destinationType>PROCESSOR</destinationType>
+        <relationship>failure</relationship>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <controllerService>
+        <id>acbd7659-0167-1000-a0ea-395ce5f9c5f0</id>
+        <versionedComponentId>000ffa3b-4cd4-34ee-b452-7e70c07dc298</versionedComponentId>
+        <name>DefaultMarkLogicDatabaseClientService</name>
+        <comment/>
+        <class>org.apache.nifi.marklogic.controller.DefaultMarkLogicDatabaseClientService</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-marklogic-nar</artifact>
+          <version>1.8.0.2</version>
+        </bundle>
+        <enabled>true</enabled>
+        <property>
+          <name>Host</name>
+          <value>localhost</value>
+        </property>
+        <property>
+          <name>Port</name>
+          <value>8010</value>
+        </property>
+        <property>
+          <name>Load Balancer</name>
+          <value>false</value>
+        </property>
+        <property>
+          <name>Security Context Type</name>
+          <value>DIGEST</value>
+        </property>
+        <property>
+          <name>Username</name>
+          <value>nifi2</value>
+        </property>
+        <property>
+          <name>Password</name>
+          <value>enc{3b32aaa38ee0a6807fdabfd1b719f5cb10c54d0ab98d607b1d71f789bca4b18d}</value>
+        </property>
+        <property>
+          <name>Database</name>
+          <value>data-hub-STAGING</value>
+        </property>
+        <property>
+          <name>External name</name>
+        </property>
+        <property>
+          <name>SSL Context Service</name>
+        </property>
+        <property>
+          <name>Client Authentication</name>
+        </property>
+      </controllerService>
     </processGroup>
   </rootGroup>
   <controllerServices/>

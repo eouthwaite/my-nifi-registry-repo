@@ -1,0 +1,600 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "a7fd21a7-d85e-354d-9090-1eb30a0dd87a",
+        "name" : "LogAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "0c3cd4ba-86c6-31ec-a593-a6a9c180c70d",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "3e251950-630e-3d6a-a0ae-18f2a180d093",
+        "name" : "PutMarkLogic",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "3e251950-630e-3d6a-a0ae-18f2a180d093",
+        "name" : "PutMarkLogic",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "44395381-eea0-3151-ba5e-7e26aaecc53f",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "b6b9064f-2af5-371d-8176-8f501d49f7e9",
+        "name" : "GetFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "3e251950-630e-3d6a-a0ae-18f2a180d093",
+        "name" : "PutMarkLogic",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "7c1e3970-afd0-3f11-8727-5a0f07be574c",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "d656c0f9-0925-3afd-b7e1-92c98a760df2",
+        "name" : "LoopOnFail",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : 1380.125,
+        "y" : 428.0
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "d656c0f9-0925-3afd-b7e1-92c98a760df2",
+        "name" : "LoopOnFail",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "05c1e82e-58db-3ca4-b814-eed6d0cdf13c",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+        "id" : "3e251950-630e-3d6a-a0ae-18f2a180d093",
+        "name" : "PutMarkLogic",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ {
+      "bundle" : {
+        "artifact" : "nifi-marklogic-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.2"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-marklogic-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.2"
+        },
+        "type" : "org.apache.nifi.marklogic.controller.MarkLogicDatabaseClientService"
+      } ],
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "000ffa3b-4cd4-34ee-b452-7e70c07dc298",
+      "name" : "DefaultMarkLogicDatabaseClientService",
+      "properties" : {
+        "Load Balancer" : "false",
+        "Username" : "nifi2",
+        "Port" : "8010",
+        "Security Context Type" : "DIGEST",
+        "Database" : "data-hub-STAGING",
+        "Host" : "localhost"
+      },
+      "propertyDescriptors" : {
+        "Load Balancer" : {
+          "displayName" : "Load Balancer",
+          "identifiesControllerService" : false,
+          "name" : "Load Balancer",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Username" : {
+          "displayName" : "Username",
+          "identifiesControllerService" : false,
+          "name" : "Username",
+          "sensitive" : false
+        },
+        "Port" : {
+          "displayName" : "Port",
+          "identifiesControllerService" : false,
+          "name" : "Port",
+          "sensitive" : false
+        },
+        "Security Context Type" : {
+          "displayName" : "Security Context Type",
+          "identifiesControllerService" : false,
+          "name" : "Security Context Type",
+          "sensitive" : false
+        },
+        "Database" : {
+          "displayName" : "Database",
+          "identifiesControllerService" : false,
+          "name" : "Database",
+          "sensitive" : false
+        },
+        "External name" : {
+          "displayName" : "External name",
+          "identifiesControllerService" : false,
+          "name" : "External name",
+          "sensitive" : false
+        },
+        "Host" : {
+          "displayName" : "Host",
+          "identifiesControllerService" : false,
+          "name" : "Host",
+          "sensitive" : false
+        },
+        "Client Authentication" : {
+          "displayName" : "Client Authentication",
+          "identifiesControllerService" : false,
+          "name" : "Client Authentication",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : false
+        }
+      },
+      "type" : "org.apache.nifi.marklogic.controller.DefaultMarkLogicDatabaseClientService"
+    } ],
+    "funnels" : [ ],
+    "identifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "Group1",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 463.0,
+      "y" : 168.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "d656c0f9-0925-3afd-b7e1-92c98a760df2",
+      "name" : "LoopOnFail",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1524.5,
+        "y" : 438.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "batch_success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-marklogic-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.2"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "3e251950-630e-3d6a-a0ae-18f2a180d093",
+      "name" : "PutMarkLogic",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 885.75,
+        "y" : 438.0
+      },
+      "properties" : {
+        "URI Prefix" : "/test/",
+        "URI Attribute Name" : "uuid",
+        "DatabaseClient Service" : "000ffa3b-4cd4-34ee-b452-7e70c07dc298",
+        "Batch Size" : "100",
+        "Permissions" : "rest-reader,read,rest-writer,update",
+        "Thread Count" : "3"
+      },
+      "propertyDescriptors" : {
+        "URI Prefix" : {
+          "displayName" : "URI Prefix",
+          "identifiesControllerService" : false,
+          "name" : "URI Prefix",
+          "sensitive" : false
+        },
+        "Job Name" : {
+          "displayName" : "Job Name",
+          "identifiesControllerService" : false,
+          "name" : "Job Name",
+          "sensitive" : false
+        },
+        "MIME type" : {
+          "displayName" : "MIME type",
+          "identifiesControllerService" : false,
+          "name" : "MIME type",
+          "sensitive" : false
+        },
+        "Temporal Collection" : {
+          "displayName" : "Temporal Collection",
+          "identifiesControllerService" : false,
+          "name" : "Temporal Collection",
+          "sensitive" : false
+        },
+        "URI Suffix" : {
+          "displayName" : "URI Suffix",
+          "identifiesControllerService" : false,
+          "name" : "URI Suffix",
+          "sensitive" : false
+        },
+        "URI Attribute Name" : {
+          "displayName" : "URI Attribute Name",
+          "identifiesControllerService" : false,
+          "name" : "URI Attribute Name",
+          "sensitive" : false
+        },
+        "Job ID" : {
+          "displayName" : "Job ID",
+          "identifiesControllerService" : false,
+          "name" : "Job ID",
+          "sensitive" : false
+        },
+        "DatabaseClient Service" : {
+          "displayName" : "DatabaseClient Service",
+          "identifiesControllerService" : true,
+          "name" : "DatabaseClient Service",
+          "sensitive" : false
+        },
+        "Format" : {
+          "displayName" : "Format",
+          "identifiesControllerService" : false,
+          "name" : "Format",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Collections" : {
+          "displayName" : "Collections",
+          "identifiesControllerService" : false,
+          "name" : "Collections",
+          "sensitive" : false
+        },
+        "Thread Count" : {
+          "displayName" : "Thread Count",
+          "identifiesControllerService" : false,
+          "name" : "Thread Count",
+          "sensitive" : false
+        },
+        "Server Transform" : {
+          "displayName" : "Server Transform",
+          "identifiesControllerService" : false,
+          "name" : "Server Transform",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.marklogic.processor.PutMarkLogic",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "b6b9064f-2af5-371d-8176-8f501d49f7e9",
+      "name" : "GetFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 885.75,
+        "y" : 241.0
+      },
+      "properties" : {
+        "Keep Source File" : "false",
+        "Minimum File Age" : "0 sec",
+        "Polling Interval" : "0 sec",
+        "Input Directory" : "${nifi.custom.variable.InputDirectory}",
+        "Batch Size" : "10",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "[^\\.].*"
+      },
+      "propertyDescriptors" : {
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
+          "identifiesControllerService" : false,
+          "name" : "Keep Source File",
+          "sensitive" : false
+        },
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Age",
+          "sensitive" : false
+        },
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
+          "identifiesControllerService" : false,
+          "name" : "Polling Interval",
+          "sensitive" : false
+        },
+        "Input Directory" : {
+          "displayName" : "Input Directory",
+          "identifiesControllerService" : false,
+          "name" : "Input Directory",
+          "sensitive" : false
+        },
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Size",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
+          "identifiesControllerService" : false,
+          "name" : "Ignore Hidden Files",
+          "sensitive" : false
+        },
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
+          "identifiesControllerService" : false,
+          "name" : "Recurse Subdirectories",
+          "sensitive" : false
+        },
+        "File Filter" : {
+          "displayName" : "File Filter",
+          "identifiesControllerService" : false,
+          "name" : "File Filter",
+          "sensitive" : false
+        },
+        "Path Filter" : {
+          "displayName" : "Path Filter",
+          "identifiesControllerService" : false,
+          "name" : "Path Filter",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GetFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "06615cf6-a42d-35da-81b6-38d7e394cd74",
+      "identifier" : "a7fd21a7-d85e-354d-9090-1eb30a0dd87a",
+      "name" : "LogAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 885.75,
+        "y" : 636.5
+      },
+      "properties" : {
+        "character-set" : "UTF-8",
+        "Log Level" : "info",
+        "attributes-to-log-regex" : ".*",
+        "Log Payload" : "false"
+      },
+      "propertyDescriptors" : {
+        "Log prefix" : {
+          "displayName" : "Log prefix",
+          "identifiesControllerService" : false,
+          "name" : "Log prefix",
+          "sensitive" : false
+        },
+        "character-set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "character-set",
+          "sensitive" : false
+        },
+        "Log Level" : {
+          "displayName" : "Log Level",
+          "identifiesControllerService" : false,
+          "name" : "Log Level",
+          "sensitive" : false
+        },
+        "attributes-to-ignore-regex" : {
+          "displayName" : "Attributes to Ignore by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-ignore-regex",
+          "sensitive" : false
+        },
+        "Attributes to Ignore" : {
+          "displayName" : "Attributes to Ignore",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Ignore",
+          "sensitive" : false
+        },
+        "Attributes to Log" : {
+          "displayName" : "Attributes to Log",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Log",
+          "sensitive" : false
+        },
+        "attributes-to-log-regex" : {
+          "displayName" : "Attributes to Log by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-log-regex",
+          "sensitive" : false
+        },
+        "Log Payload" : {
+          "displayName" : "Log Payload",
+          "identifiesControllerService" : false,
+          "name" : "Log Payload",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.LogAttribute",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "variables" : { }
+  }
+}
